@@ -8,6 +8,7 @@
 		"string.h": "c",
 		"ft_pwd.h": "c",
 		"ft_src.h": "c",
-		"ft_env.h": "c"
+		"ft_env.h": "c",
+		"_types.h": "c"
 	}
 }
