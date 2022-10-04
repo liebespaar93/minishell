@@ -1,5 +1,13 @@
 {
 	"files.associations": {
-		"stdio.h": "c"
+		"stdio.h": "c",
+		"stat.h": "c",
+		"_s_ifmt.h": "c",
+		"unistd.h": "c",
+		"ft_color.h": "c",
+		"string.h": "c",
+		"ft_pwd.h": "c",
+		"ft_src.h": "c",
+		"ft_env.h": "c"
 	}
 }

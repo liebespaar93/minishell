@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 03:51:47 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/08/15 12:28:55 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/09/30 18:51:47 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 # define FG_LMAGENTA	"\033[95m"
 # define FG_LCYAN		"\033[96m"
 # define FG_WHITE		"\033[97m"
+# define FG_NAME		"\033[38;5;051m"
 
 /////***** background *****/////
 # define BG				"\033[48;5;"
@@ -49,7 +50,6 @@
 # define BG_LMAGENTA	"\033[105m"
 # define BG_LCYAN		"\033[106m"
 # define BG_WHITE		"\033[107m"
-# define BG_MAKE1		"\033[48;5;236m"
 # define BG_MAKE2		"\033[48;5;238m"
 # define BG_MAKE3		"\033[48;5;240m"
 
