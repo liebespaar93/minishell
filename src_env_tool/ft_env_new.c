@@ -19,21 +19,21 @@ t_env	*ft_env_new(char *name, char *data)
 	return (new);
 }
 
-t_env	*ft_env_add(t_env *head, t_env *new)
+t_env	*ft_env_add(t_env *head, t_env *env)
 {
 	t_env	*temp;
 
 	temp = head;
 	if (!temp)
 	{
-		head = new;
-		return (new);
+		head = env;
+		return (env);
 	}
 	while (temp->next)
 		temp = temp->next;
-	temp->next = new;
-	new->prev = temp;
-	return (new);
+	temp->next = env;
+	env->prev = temp;
+	return (env);
 }
 
 t_env	*ft_env_join(t_env **head, char *name, char *data)

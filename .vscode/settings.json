@@ -9,6 +9,9 @@
 		"ft_pwd.h": "c",
 		"ft_src.h": "c",
 		"ft_env.h": "c",
-		"_types.h": "c"
+		"_types.h": "c",
+		"stdlib.h": "c",
+		"ft_env_tool.h": "c",
+		"ft_export.h": "c"
 	}
 }

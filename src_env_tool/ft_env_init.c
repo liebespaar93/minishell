@@ -32,8 +32,6 @@ int ft_split_env(char *str, char **name, char **data)
 	return (1);
 }
 
-
-
 t_env	*ft_env_init(char ***envp)
 {
 	t_env	*head;
@@ -52,6 +50,5 @@ t_env	*ft_env_init(char ***envp)
 		return (NULL);
 	while (head->prev)
 		head = head->prev;
-	ft_env(head);
 	return (head);
 }

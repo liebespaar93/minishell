@@ -16,7 +16,7 @@ typedef struct s_env
 /* ft_env_new */
 
 t_env	*ft_env_new(char *name, char *data);
-t_env	*ft_env_add(t_env *head, t_env *new);
+t_env	*ft_env_add(t_env *head, t_env *env);
 t_env	*ft_env_join(t_env **head, char *name, char *data);
 
 
