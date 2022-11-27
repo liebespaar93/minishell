@@ -6,7 +6,7 @@
 #    By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/20 10:50:03 by kyoulee           #+#    #+#              #
-#    Updated: 2022/11/25 04:05:49 by kyoulee          ###   ########.fr        #
+#    Updated: 2022/11/27 17:01:39 by kyoulee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -108,6 +108,7 @@ SRC_BUILTIN_C = $(addprefix $(SRC_BUILTIN_DIR)/, $(SRC_BUILTIN_FILE))
 SRC_CMD_FILE =		ft_cmd.c		\
 					ft_cmd_tool.c	\
 					ft_cmd_argv.c	\
+					ft_cmd_pipe.c	\
 					ft_redirect.c
 
 SRC_CMD_C = $(addprefix $(SRC_CMD_DIR)/, $(SRC_CMD_FILE))
@@ -142,7 +143,8 @@ SRC_EXPORT_TOOL_FILE =	ft_envp.c	\
 
 SRC_EXPORT_TOOL_C = $(addprefix $(SRC_EXPORT_TOOL_DIR)/, $(SRC_EXPORT_TOOL_FILE))
 
-SRC_FILE_FILE =	ft_get_file.c
+SRC_FILE_FILE =	ft_get_file.c	\
+				ft_file_pwd.c
 
 SRC_FILE_C = $(addprefix $(SRC_FILE_DIR)/, $(SRC_FILE_FILE))
 

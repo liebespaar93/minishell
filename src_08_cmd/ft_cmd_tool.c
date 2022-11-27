@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 12:04:39 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/27 16:00:25 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/11/27 16:54:26 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ t_cmd	*ft_cmd_init(t_cmd *cmd)
 	cmd->argv = NULL;
 	cmd->fd_in = STDIN_FILENO;
 	cmd->fd_out = STDOUT_FILENO;
+	cmd->skip = 0;
+	cmd->std = 1;
 	return (cmd);
 }
 

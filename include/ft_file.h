@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 13:50:55 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/15 11:53:26 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/11/27 17:07:03 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 # define FT_FILE_H
 
 char	*ft_get_file(char *name);
+int		ft_pwd_check(char *str);
 
 #endif

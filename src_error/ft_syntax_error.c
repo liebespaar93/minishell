@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 11:14:37 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/22 18:06:14 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/11/27 16:55:27 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <ft_error.h>
 #include <ft_tool.h>
+#include <ft_env_tool.h>
 
 char	*ft_syntax_word(char *str)
 {
@@ -35,8 +36,6 @@ char	*ft_syntax_word(char *str)
 		return ("newline");
 	return (NULL);
 }
-
-#include <ft_env_tool.h>
 
 int	ft_syntax_error(int *flag, char *s)
 {

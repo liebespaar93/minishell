@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 07:31:00 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/24 20:19:18 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/11/27 16:54:44 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,13 @@ typedef struct s_cmd
 	int		fd_in;
 	int		fd_out;
 	int		skip;
+	int		std;
 }	t_cmd;
 
 int		ft_cmd(char *str);
+
+pid_t	ft_cmd_pipe(t_cmd *cmd);
+int		ft_cmd_std(t_cmd *cmd);
 
 char	**ft_argv_add(t_cmd *cmd, char *str);
 void	ft_argv_free(t_cmd *cmd);
