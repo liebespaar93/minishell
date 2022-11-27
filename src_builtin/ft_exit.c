@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 23:17:49 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/27 15:47:08 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/11/27 16:40:50 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,18 @@
 #include <ft_global.h>
 #include <ft_env_tool.h>
 #include <ft_global.h>
+
+static void	check_str(char **s)
+{
+	char	*str;
+
+	str = *s;
+	while ((0x09 <= *str && *str <= 0x0d) || *str == 0x20)
+		str++;
+	if (*str == '+' || *str == '-')
+		str++;
+	*s = str;
+}
 
 int	ft_exit(int argc, const char *argv[])
 {
@@ -35,10 +47,7 @@ int	ft_exit(int argc, const char *argv[])
 	{
 		str = (char *)argv[1];
 		i = ft_atoi(argv[1]);
-		while ((0x09 <= *str && *str <= 0x0d) || *str == 0x20)
-			str++;
-		if (*str == '+' || *str == '-')
-			str++;
+		check_str(&str);
 		while (ft_isdigit(*str))
 			str++;
 		if (*str || (ft_strlen(argv[1]) > 2 && (i == -1 || i == 0)))

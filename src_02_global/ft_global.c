@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_global.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 12:19:18 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/25 03:01:51 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/11/27 16:35:40 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <ft_export_tool.h>
 #include <ft_error.h>
 
-const char **ft_cpy_origin_envp(const char **envp)
+const char	**ft_cpy_origin_envp(const char **envp)
 {
 	char	**tmp;
 	int		i;

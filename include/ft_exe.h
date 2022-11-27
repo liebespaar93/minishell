@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_exe.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 11:56:36 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/21 14:18:19 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/11/27 16:37:18 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@
 # include <ft_cmd.h>
 
 int	ft_exe(t_cmd *cmd);
-int		ft_execute(char *argv[]);
+int	ft_execute(char *argv[]);
 #endif

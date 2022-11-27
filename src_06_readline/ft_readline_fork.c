@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_readline_fork.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 09:53:44 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/27 10:09:00 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/11/27 16:35:20 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 #include <ft_readline.h>
 #include <ft_tool.h>
 #include <ft_terminal.h>
-
 
 void	ft_child_readline(char *str, int fd_pipe[2])
 {
@@ -44,7 +43,7 @@ char	*ft_parent_readline(int fd_pipe[2])
 {
 	char	buff[ARG_MAX];
 	int		stat;
-	
+
 	ft_bzero(buff, sizeof(char) * ARG_MAX);
 	close(fd_pipe[STDOUT_FILENO]);
 	read(fd_pipe[STDIN_FILENO], buff, ARG_MAX);

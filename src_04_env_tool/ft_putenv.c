@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putenv.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 13:31:51 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/25 15:02:21 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/11/27 16:32:53 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void	ft_put_env_norm(const char *str)
 		free(*tmp);
 	*tmp = (char *)str;
 }
-
 
 int	ft_putenv(const char *str)
 {

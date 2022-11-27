@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_signal_set.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 01:24:42 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/27 15:06:27 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/11/27 16:35:30 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_sigint(int signo)
 	(void)signo;
 	return ;
 }
+
 void	ft_sigquit(int signo)
 {
 	(void)signo;

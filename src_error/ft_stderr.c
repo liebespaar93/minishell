@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stderr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 18:50:42 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/25 12:51:17 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/11/27 16:35:53 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 #include <ft_tool.h>
 #include <ft_env_tool.h>
 
-int ft_stderror(void)
+int	ft_stderror(void)
 {
 	char	buff[LINE_MAX];
 

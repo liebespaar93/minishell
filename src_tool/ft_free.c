@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 04:04:17 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/25 04:08:58 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/11/27 16:31:05 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int ft_free(void **ptr)
+int	ft_free(void **ptr)
 {
 	free(*ptr);
 	return (1);

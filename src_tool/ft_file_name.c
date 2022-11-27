@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_file_name.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 12:50:48 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/25 05:30:27 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/11/27 16:32:38 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <ft_transrate.h>
 
 #include <stdio.h>
+
 char	*ft_file_name(char **str)
 {
 	char	*word;
