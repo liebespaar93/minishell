@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 07:19:47 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/09 21:05:30 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/09 23:33:33 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,7 @@ char	*ft_transrate_double_quote(char *new, char *str)
 			word_len = ft_strlen(word);
 			temp += word_len + 1;
 			index += ft_strlen(getenv(word));
-			ft_strcat(new, getenv(word));
-			free(word);
+			(ft_strcat(new, getenv(word)), free(word));
 		}
 		else if (*temp == '\\' && *(temp + 1) == '$' && temp++)
 			new[index++] = *temp++;

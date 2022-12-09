@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 20:40:26 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/09 22:45:11 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/09 23:32:12 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ const char	**ft_export_find(char *name)
 	else
 		find = ft_strdup(name);
 	export = g_global->export_ptr;
- 	while (export[i])
+	while (export[i])
 	{
 		if (!ft_strcmp(export[i], find))
 		{

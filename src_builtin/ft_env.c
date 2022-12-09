@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 19:24:38 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/09 23:24:00 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/09 23:35:13 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <errno.h>
+#include <unistd.h>
 
 #include <ft_tool.h>
 #include <ft_export_tool.h>
@@ -34,8 +35,6 @@ int	ft_env_print(void)
 	return (EXIT_SUCCESS);
 }
 
-#include <unistd.h>
-
 int	ft_env(int argc, const char *argv[])
 {
 	int		i;
@@ -50,9 +49,7 @@ int	ft_env(int argc, const char *argv[])
 		{
 			i = 0;
 			while (++i < argc)
-			{
 				ft_export_set((char *)argv[i]);
-			}
 			ft_env_print();
 			i = 0;
 			while (++i < argc)
@@ -61,10 +58,7 @@ int	ft_env(int argc, const char *argv[])
 				ft_export_unset((char *)argv[i]);
 			}
 		}
-		ft_putenv_stat(0);
-		exit(0);
+		(ft_putenv_stat(0), exit(0));
 	}
-	waitpid(pid, NULL, 0);
-
-	return (0);
+	return ((waitpid(pid, NULL, 0), 0));
 }
