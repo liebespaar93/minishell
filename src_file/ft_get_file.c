@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_file.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 11:53:37 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/25 12:48:08 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/09 23:49:44 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ char	*ft_get_file(char *name)
 	char	*file_pwd;
 
 	path = getenv("PATH");
+	if (!path)
+		return (ft_strdup(""));
 	next = NULL;
 	file_pwd = ft_get_file_in_path(name, path, next);
 	if (file_pwd)

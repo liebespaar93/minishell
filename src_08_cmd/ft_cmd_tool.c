@@ -6,7 +6,7 @@
 /*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 12:04:39 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/09 21:03:19 by sunhwang         ###   ########.fr       */
+/*   Updated: 2022/12/09 23:51:15 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,7 @@ char	*ft_cmd_word(t_cmd *cmd, char *str)
 	}
 	argv = ft_strncpy(str, temp - str);
 	word = ft_transrate_env(argv);
-	if (!*word)
-		free(word);
-	else
-		ft_argv_add(cmd, word);
+	ft_argv_add(cmd, word);
 	free(argv);
 	return (temp);
 }
