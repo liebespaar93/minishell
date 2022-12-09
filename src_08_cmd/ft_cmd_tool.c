@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cmd_tool.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 12:04:39 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/27 16:54:26 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/09 21:03:19 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ char	*ft_cmd_word(t_cmd *cmd, char *str)
 	char	*word;
 
 	temp = str;
-	while (*temp && \
-		!ft_strchr(WHITE_SPACE, *temp) && !ft_strchr("<>|", *temp))
+	while (*temp && !ft_strchr(WHITE_SPACE, *temp) && !ft_strchr("<>|", *temp))
 	{
 		if (ft_strchr("\'\"", *temp))
 			temp = ft_strchr(temp + 1, *temp);

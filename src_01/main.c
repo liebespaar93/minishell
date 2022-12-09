@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 12:22:07 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/27 11:15:10 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/09 21:37:24 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 #include <ft_tool.h>
@@ -23,8 +24,8 @@ int	main(int argc, char *argv[], const char *envp[])
 	struct termios	oldtty;
 	struct termios	newtty;
 
-	(void)argc;
-	(void)argv;
+	if (1 < argc)
+		return (printf("%s : Invalid argument\n", argv[1]), 0);
 	ft_global_init(envp);
 	g_global->origin_envp_ptr = envp;
 	tcgetattr(STDIN_FILENO, &oldtty);
