@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 12:22:07 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/09 23:28:32 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/09 23:37:21 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <ft_terminal.h>
 #include <ft_global.h>
 #include <ft_env_tool.h>
+#include <ft_export_tool.h>
 
 int	main(int argc, char *argv[], const char *envp[])
 {
