@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 07:22:07 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/27 10:03:06 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/09 14:43:57 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ char	*ft_redirect_eof(char *str, int *flag)
 		temp++;
 	}
 	if (!*temp && ft_syntax_error(flag, "\n"))
-		return (temp);
+		return (NULL);
 	return (str);
 }
 

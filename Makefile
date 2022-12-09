@@ -6,7 +6,7 @@
 #    By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/20 10:50:03 by kyoulee           #+#    #+#              #
-#    Updated: 2022/11/27 17:01:39 by kyoulee          ###   ########.fr        #
+#    Updated: 2022/12/09 13:59:48 by kyoulee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -109,7 +109,8 @@ SRC_CMD_FILE =		ft_cmd.c		\
 					ft_cmd_tool.c	\
 					ft_cmd_argv.c	\
 					ft_cmd_pipe.c	\
-					ft_redirect.c
+					ft_redirect.c	\
+					ft_redirect_readline.c
 
 SRC_CMD_C = $(addprefix $(SRC_CMD_DIR)/, $(SRC_CMD_FILE))
 
