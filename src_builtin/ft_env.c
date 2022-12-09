@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 19:24:38 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/24 16:22:01 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/09 23:24:00 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,27 +34,37 @@ int	ft_env_print(void)
 	return (EXIT_SUCCESS);
 }
 
+#include <unistd.h>
+
 int	ft_env(int argc, const char *argv[])
 {
-	int	i;
+	int		i;
+	pid_t	pid;
 
-	if (argc == 1)
-		ft_env_print();
-	else
+	pid = fork();
+	if (!pid)
 	{
-		i = 0;
-		while (++i < argc)
+		if (argc == 1)
+			ft_env_print();
+		else
 		{
-			ft_export_set((char *)argv[i]);
+			i = 0;
+			while (++i < argc)
+			{
+				ft_export_set((char *)argv[i]);
+			}
+			ft_env_print();
+			i = 0;
+			while (++i < argc)
+			{
+				ft_unsetenv(*ft_export_find((char *)argv[i]));
+				ft_export_unset((char *)argv[i]);
+			}
 		}
-		ft_env_print();
-		i = 0;
-		while (++i < argc)
-		{
-			ft_unsetenv(*ft_export_find((char *)argv[i]));
-			ft_export_unset((char *)argv[i]);
-		}
+		ft_putenv_stat(0);
+		exit(0);
 	}
-	ft_putenv_stat(0);
-	return (1);
+	waitpid(pid, NULL, 0);
+
+	return (0);
 }

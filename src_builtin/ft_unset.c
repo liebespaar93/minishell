@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 23:03:12 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/16 15:09:18 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/09 21:51:36 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int	ft_unset(int argc, const char *argv[])
 			}
 			else
 			{
-				ft_unsetenv((char *)argv[i]);
 				ft_export_unset((char *)argv[i]);
+				ft_unsetenv((char *)argv[i]);
 			}
 		}
 	}

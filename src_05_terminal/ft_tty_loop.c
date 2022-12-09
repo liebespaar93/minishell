@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 17:55:35 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/27 17:22:46 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/09 17:00:35 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,14 @@ void	ft_tty_loop(void)
 		temp = ft_readline_fork("minishell-v1.0$ ");
 		if (!*temp)
 			continue ;
-		if (*temp == '\x04' && ft_strcat(history_str, "exit "))
+		if (*temp == '\x04' && ft_strcat(history_str, "exit ") \
+			&& printf("\b\b"))
 			ft_strcat(history_str, getenv("?"));
 		else
 			ft_strcat(history_str, temp);
 		free(temp);
 		if (*history_str)
-		{
-			ft_running(history_str);
-			add_history(history_str);
-		}
+			(ft_running(history_str), add_history(history_str));
 	}
 	ft_signal_unset();
 }

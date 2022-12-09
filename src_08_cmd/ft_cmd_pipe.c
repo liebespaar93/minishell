@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 16:37:04 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/27 16:50:13 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/09 23:17:55 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ pid_t	ft_cmd_pipe(t_cmd *cmd)
 	if (!pid)
 	{
 		close(fd_pipe[STDIN_FILENO]);
-		ft_export_set(ft_strdup("OLDPWD"));
 		if (cmd->fd_out != STDOUT_FILENO)
 			close(fd_pipe[STDOUT_FILENO]);
 		else

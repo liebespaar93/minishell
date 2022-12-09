@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 13:23:12 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/27 15:19:21 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/09 21:06:32 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,7 @@ int	ft_export(int argc, const char *argv[])
 
 	flag = 0;
 	if (argc == 1)
-	{
 		ft_export_args();
-	}
 	else
 	{
 		i = 0;

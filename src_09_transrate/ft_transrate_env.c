@@ -6,14 +6,34 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 07:19:47 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/24 16:06:14 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/09 21:05:30 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <sys/syslimits.h>
+#include <readline/history.h>
+#include <readline/readline.h>
 
 #include <ft_tool.h>
+
+char	*ft_backslash(char *new, char *str)
+{
+	char	*temp;
+
+	temp = NULL;
+	str++;
+	if (!*str)
+	{
+		temp = readline("> ");
+		ft_strcat(new, temp);
+		free(temp);
+		return (str);
+	}
+	ft_strcat(new, (char [2]){*str, 0});
+	str++;
+	return (str);
+}
 
 char	*ft_transrate_sigle_quote(char *new, char *str)
 {
@@ -46,6 +66,8 @@ char	*ft_transrate_double_quote(char *new, char *str)
 			ft_strcat(new, getenv(word));
 			free(word);
 		}
+		else if (*temp == '\\' && *(temp + 1) == '$' && temp++)
+			new[index++] = *temp++;
 		else
 			new[index++] = *temp++;
 	}
@@ -83,6 +105,8 @@ char	*ft_transrate_env(char *str)
 			temp = ft_transrate_double_quote(new, temp);
 		else if (*temp == '$')
 			temp = ft_transrate_doller(new, temp);
+		else if (*temp == '\\')
+			temp = ft_backslash(new, temp);
 		else
 		{
 			index = ft_strlen(new);

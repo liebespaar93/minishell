@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 12:22:07 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/09 21:37:24 by sunhwang         ###   ########.fr       */
+/*   Updated: 2022/12/09 23:28:32 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	main(int argc, char *argv[], const char *envp[])
 	ft_bash_ttyset(&newtty);
 	tcsetattr(STDIN_FILENO, TCSANOW, &newtty);
 	ft_putenv(ft_strdup("?=0"));
+	ft_export_set(ft_strdup("OLDPWD"));
 	ft_tty_loop();
 	tcsetattr(STDIN_FILENO, TCSANOW, &oldtty);
 	return (ft_atoi(getenv("?")));
