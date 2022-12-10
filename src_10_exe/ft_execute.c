@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_execute.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 09:59:21 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/27 17:22:07 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/10 16:07:39 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ int	ft_execute_else(char *argv[])
 	int			pid;
 	int			stat;
 
-	temp = ft_get_file(argv[0]);
 	stat = 0;
+	temp = ft_get_file(argv[0]);
 	if (*temp)
 	{
 		pid = fork();
