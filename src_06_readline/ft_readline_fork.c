@@ -6,7 +6,7 @@
 /*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 09:53:44 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/27 16:35:20 by sunhwang         ###   ########.fr       */
+/*   Updated: 2022/12/10 14:08:54 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,21 @@ void	ft_child_readline(char *str, int fd_pipe[2])
 	if (!rl_buffer)
 		exit(-1);
 	write(fd_pipe[STDOUT_FILENO], rl_buffer, ft_strlen(rl_buffer));
+	close(fd_pipe[STDOUT_FILENO]);
 	free(rl_buffer);
 	exit(0);
 }
 
-char	*ft_parent_readline(int fd_pipe[2])
+char	*ft_parent_readline(int fd_pipe[2], pid_t pid)
 {
 	char	buff[ARG_MAX];
 	int		stat;
 
-	ft_bzero(buff, sizeof(char) * ARG_MAX);
+	stat = 1;
+	ft_bzero(buff, ARG_MAX);
 	close(fd_pipe[STDOUT_FILENO]);
 	read(fd_pipe[STDIN_FILENO], buff, ARG_MAX);
-	wait(&stat);
+	waitpid(pid, &stat, 0);
 	close(fd_pipe[STDIN_FILENO]);
 	if (stat == 2)
 		printf("\n");
@@ -65,12 +67,15 @@ char	*ft_readline_fork(char *str)
 	char	*result;
 
 	result = NULL;
-	pipe(fd_pipe);
+	if (pipe(fd_pipe) < 0)
+		return (ft_strdup(""));
 	pid = fork();
-	if (!pid)
+	if (pid < 0)
+		return (ft_strdup(""));
+	else if (pid == 0)
 		ft_child_readline(str, fd_pipe);
 	else
-		result = ft_parent_readline(fd_pipe);
+		result = ft_parent_readline(fd_pipe, pid);
 	return (result);
 }
 
@@ -92,11 +97,14 @@ char	*ft_readline_fork_ori(char *str)
 	char	*result;
 
 	result = NULL;
-	pipe(fd_pipe);
+	if (pipe(fd_pipe) < 0)
+		return (ft_strdup(""));
 	pid = fork();
+	if (pid < 0)
+		return (ft_strdup(""));
 	if (!pid)
 		ft_child_readline_ori(str, fd_pipe);
 	else
-		result = ft_parent_readline(fd_pipe);
+		result = ft_parent_readline(fd_pipe, pid);
 	return (result);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cmd_argv.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 09:45:04 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/24 15:32:09 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/10 02:15:36 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ char	**ft_argv_add(t_cmd *cmd, char *str)
 	int		len;
 
 	len = ft_argv_len(cmd);
+	if (!len && !*str)
+		return (cmd->argv);
 	new = (char **)malloc(sizeof(char *) * (len + 2));
 	if (!new)
 		return (NULL);

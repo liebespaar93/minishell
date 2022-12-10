@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_file_pwd.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 16:59:23 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/27 17:12:36 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/10 15:29:34 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,11 @@ char	*ft_file_pwd_dir(char *str)
 
 int	ft_pwd_check(char *str)
 {
-	struct dirent	*file;
-	char			*file_pwd;
-	char			*file_dir;
-	char			*file_name;
-	int				fd;
+	char	*file_pwd;
+	char	*file_dir;
+	char	*file_name;
+	int		fd;
+	int		stat;
 
 	file_pwd = ft_file_pwd(str);
 	file_dir = ft_file_pwd_dir(file_pwd);
@@ -76,15 +76,16 @@ int	ft_pwd_check(char *str)
 	fd = open(file_dir, O_RDONLY | O_DIRECTORY);
 	if (fd == -1 && write(STDERR_FILENO, " No such file or directory\n", 27))
 		return (127);
-	file = ft_readdir_get_file(file_dir, file_name);
-	if (!file && write(STDERR_FILENO, " No such file or directory\n", 27))
-		return (127);
-	if (file->d_type == 4 && write(STDERR_FILENO, " is a directory\n", 16))
-		return (126);
+	stat = ft_readdir_check_file(file_dir, file_name);
+	if (stat)
+	{
+		close(fd);
+		return (stat);
+	}
 	close(fd);
 	fd = open(str, O_RDONLY);
 	if (fd == -1 && write(STDERR_FILENO, " No such file or directory\n", 27))
 		return (126);
 	close(fd);
-	return (0);
+	return (stat);
 }

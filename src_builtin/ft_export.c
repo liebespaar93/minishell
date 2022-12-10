@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_export.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 13:23:12 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/09 21:06:32 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/10 03:45:20 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_export(int argc, const char *argv[])
 		{
 			if (ft_export_check(argv[i]))
 			{
-				write(STDERR_FILENO, " not a valid identifier", 23);
+				write(STDERR_FILENO, " not a valid identifier\n", 24);
 				ft_putenv_stat(1);
 				flag = 1;
 			}

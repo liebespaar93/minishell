@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_env.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 19:24:38 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/09 23:35:13 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/10 03:54:23 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,27 +38,22 @@ int	ft_env_print(void)
 int	ft_env(int argc, const char *argv[])
 {
 	int		i;
-	pid_t	pid;
 
-	pid = fork();
-	if (!pid)
+	if (argc == 1)
+		ft_env_print();
+	else
 	{
-		if (argc == 1)
-			ft_env_print();
-		else
+		i = 0;
+		while (++i < argc)
+			ft_export_set((char *)argv[i]);
+		ft_env_print();
+		i = 0;
+		while (++i < argc)
 		{
-			i = 0;
-			while (++i < argc)
-				ft_export_set((char *)argv[i]);
-			ft_env_print();
-			i = 0;
-			while (++i < argc)
-			{
-				ft_unsetenv(*ft_export_find((char *)argv[i]));
-				ft_export_unset((char *)argv[i]);
-			}
+			ft_unsetenv(*ft_export_find((char *)argv[i]));
+			ft_export_unset((char *)argv[i]);
 		}
-		(ft_putenv_stat(0), exit(0));
 	}
-	return ((waitpid(pid, NULL, 0), 0));
+	ft_putenv_stat(0);
+	return (0);
 }

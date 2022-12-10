@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_transrate_env.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 07:19:47 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/09 23:33:33 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/10 08:59:25 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ char	*ft_transrate_doller(char *new, char *str)
 	temp += ft_strlen(word) + 1;
 	if (!*word)
 		ft_strcat(new, "$");
+	if (!getenv(word))
+		return (temp);
 	ft_strcat(new, getenv(word));
 	free(word);
 	return (temp);
@@ -94,7 +96,7 @@ char	*ft_transrate_env(char *str)
 	char	*temp;
 	int		index;
 
-	ft_bzero(new, sizeof(char [ARG_MAX]));
+	ft_bzero(new, ARG_MAX);
 	temp = str;
 	while (*temp)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_unset.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 23:03:12 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/09 21:51:36 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/10 03:45:53 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_unset(int argc, const char *argv[])
 		{
 			if (!(ft_isalpha(*argv[i]) || *argv[i] == '_'))
 			{
-				printf("%s: `%s': not a valid identifier", argv[0], argv[i]);
+				printf("%s: `%s': not a valid identifier\n", argv[0], argv[i]);
 				flag = 1;
 			}
 			else
