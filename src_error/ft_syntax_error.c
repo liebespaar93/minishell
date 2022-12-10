@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_syntax_error.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 11:14:37 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/27 16:55:27 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/10 16:40:25 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,20 @@ int	ft_syntax_error(int *flag, char *s)
 {
 	char	*word;
 
-	if (*flag == 3 && printf("syntax error: unexpected end of file\n"))
+	if (*flag == 3 && printf(" syntax error: unexpected end of file\n"))
 		return (ft_putenv_stat(ERROR_SYNTAX));
 	word = ft_syntax_word(s);
 	if (!word)
 		return (0);
 	if (*flag == 1 && !ft_strchr("<>", *word))
 	{
-		printf("syntax error near unexpected token `%s'\n", word);
+		printf(" syntax error near unexpected token `%s'\n", word);
 		*flag = -1;
 		return (ft_putenv_stat(ERROR_SYNTAX));
 	}
 	else if (*flag == 2)
 	{
-		printf("syntax error near unexpected token `%s'\n", word);
+		printf(" syntax error near unexpected token `%s'\n", word);
 		*flag = -1;
 		return (ft_putenv_stat(ERROR_SYNTAX));
 	}

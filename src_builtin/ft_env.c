@@ -6,7 +6,7 @@
 /*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 19:24:38 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/10 03:54:23 by sunhwang         ###   ########.fr       */
+/*   Updated: 2022/12/10 17:08:17 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,13 @@ int	ft_env(int argc, const char *argv[])
 	{
 		i = 0;
 		while (++i < argc)
+		{
+			if (!ft_strchr(argv[i], '=') || *argv[i] == '=')
+				break ;
 			ft_export_set((char *)argv[i]);
+		}
 		ft_env_print();
-		i = 0;
-		while (++i < argc)
+		while (i-- > 1)
 		{
 			ft_unsetenv(*ft_export_find((char *)argv[i]));
 			ft_export_unset((char *)argv[i]);

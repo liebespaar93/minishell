@@ -6,7 +6,7 @@
 /*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 07:19:47 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/10 08:59:25 by sunhwang         ###   ########.fr       */
+/*   Updated: 2022/12/10 16:50:19 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ char	*ft_transrate_double_quote(char *new, char *str)
 			index += ft_strlen(getenv(word));
 			(ft_strcat(new, getenv(word)), free(word));
 		}
-		else if (*temp == '\\' && *(temp + 1) == '$' && temp++)
+		else if (*temp == '\\' && ft_strchr("$\\", *(temp + 1)) && temp++)
 			new[index++] = *temp++;
 		else
 			new[index++] = *temp++;

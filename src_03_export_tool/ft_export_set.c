@@ -6,7 +6,7 @@
 /*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 16:36:48 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/10 03:50:34 by sunhwang         ###   ########.fr       */
+/*   Updated: 2022/12/10 18:14:06 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ int	ft_export_set(char *name)
 	const char	**export;
 	int			len;
 
-	if (ft_export_find(name))
-		return (0);
 	if (ft_strchr(name, '='))
 		ft_putenv(ft_strdup(name));
+	if (ft_export_find(name))
+		return (0);
 	len = ft_void_len((void **)g_global->export_ptr);
 	export = (const char **)malloc(sizeof(char *) * (len + 2));
 	if (!export)

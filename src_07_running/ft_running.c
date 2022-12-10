@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_running.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 07:22:07 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/09 14:43:57 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/10 16:40:52 by sunhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ char	*ft_pipe_eof(char *history_str, char *str)
 				return (NULL);
 			else if (*temp == '\x04' && ft_free((void **)&temp))
 			{
-				printf("\b\bERROR : syntax error: unexpected end of file\n");
 				ft_syntax_error((int [1]){3}, NULL);
 				return (NULL);
 			}
