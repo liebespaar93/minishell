@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cmd_argv.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 09:45:04 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/10 02:15:36 by sunhwang         ###   ########.fr       */
+/*   Updated: 2022/12/14 04:31:28 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ void	ft_argv_free(t_cmd *cmd)
 		return ;
 	while (cmd->argv[i])
 		free(cmd->argv[i++]);
+	free(cmd->argv);
 	cmd->argv = NULL;
 }

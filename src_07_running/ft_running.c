@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_running.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 07:22:07 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/10 16:40:52 by sunhwang         ###   ########.fr       */
+/*   Updated: 2022/12/14 04:26:02 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,19 @@ char	*ft_pipe_eof(char *history_str, char *str)
 {
 	char	*temp;
 
-	ft_strcat(history_str, " ");
 	while (!*str || ft_strchr(WHITE_SPACE, *str))
 	{
 		if (!*str)
 		{
 			temp = ft_readline_fork("> ");
 			if (!*temp && ft_free((void **)&temp))
-				return (NULL);
+				continue ;
 			else if (*temp == '\x04' && ft_free((void **)&temp))
 			{
 				ft_syntax_error((int [1]){3}, NULL);
 				return (NULL);
 			}
+			ft_strcat(history_str, " ");
 			ft_strcat(history_str, temp);
 			free(temp);
 		}

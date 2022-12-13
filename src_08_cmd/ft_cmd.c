@@ -6,7 +6,7 @@
 /*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 09:59:50 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/11/27 16:54:55 by kyoulee          ###   ########.fr       */
+/*   Updated: 2022/12/14 04:31:21 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_cmd_running(t_cmd *cmd, pid_t *pid, char *str, int *index)
 	}
 	if (cmd->argv)
 		ft_cmd_envset(cmd, cmd->std);
-	(ft_putenv_stat(ft_cmd_std(cmd)), ft_argv_free(cmd));
+	ft_putenv_stat(ft_cmd_std(cmd));
 }
 
 int	ft_cmd_set(char *str)

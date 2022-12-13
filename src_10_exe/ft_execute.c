@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_execute.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 09:59:21 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/10 16:07:39 by sunhwang         ###   ########.fr       */
+/*   Updated: 2022/12/14 04:38:40 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	ft_execute_else(char *argv[])
 	}
 	else if (write(STDERR_FILENO, argv[0], strlen(argv[0])) && \
 		write(STDERR_FILENO, " : command not found\n", 21))
-		return (127);
+		return ((free(temp), 127));
 	free(temp);
 	return (ft_putenv_stat(stat / 256));
 }
