@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sunhwang <sunhwang@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: kyoulee <kyoulee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 12:22:07 by kyoulee           #+#    #+#             */
-/*   Updated: 2022/12/09 23:37:21 by sunhwang         ###   ########.fr       */
+/*   Updated: 2022/12/13 16:04:03 by kyoulee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(int argc, char *argv[], const char *envp[])
 {
 	struct termios	oldtty;
 	struct termios	newtty;
+	char			*shlvl;
 
 	if (1 < argc)
 		return (printf("%s : Invalid argument\n", argv[1]), 0);
@@ -34,6 +35,9 @@ int	main(int argc, char *argv[], const char *envp[])
 	ft_bash_ttyset(&newtty);
 	tcsetattr(STDIN_FILENO, TCSANOW, &newtty);
 	ft_putenv(ft_strdup("?=0"));
+	shlvl = ft_itoa(ft_atoi(getenv("SHLVL")) + 1);
+	ft_putenv(ft_strjoin("SHLVL=", shlvl));
+	free(shlvl);
 	ft_export_set(ft_strdup("OLDPWD"));
 	ft_tty_loop();
 	tcsetattr(STDIN_FILENO, TCSANOW, &oldtty);
